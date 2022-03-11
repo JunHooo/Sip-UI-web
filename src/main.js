@@ -1,6 +1,7 @@
+import './lib/Sip.scss'
+import './index.css'
 import {createApp} from 'vue'
 import App from './App.vue'
-import './index.css'
 import { router } from './router.ts';
 
 const app=createApp(App)
