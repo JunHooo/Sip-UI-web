@@ -1,29 +1,39 @@
 <template>
-  <div class="Sip-dialog-overlay"></div>
-  <div class="Sip-dialog-wrapper">
-    <div class="Sip-dialog">
-      <header>标题 <span class="Sip-dialog-close"></span></header>
-      <main>
-        <p>第一行字</p>
-        <p>第二行字</p>
-      </main>
-      <footer>
-        <Button level="main">OK</Button>
-        <Button>Cancel</Button>
-      </footer>
+  <template v-if="visible">
+    <div class="Sip-dialog-overlay"></div>
+    <div class="Sip-dialog-wrapper">
+      <div class="Sip-dialog">
+        <header>
+          标题
+          <span class="Sip-dialog-close"></span>
+        </header>
+        <main>
+          <p>第一行字</p>
+          <p>第二行字</p>
+        </main>
+        <footer>
+          <Button level="main">OK</Button>
+          <Button>Cancel</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <script lang="ts">
 import Button from "./Button.vue";
 export default {
+  props: {
+    visible: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {
     Button,
   },
 };
 </script>
-
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
@@ -32,7 +42,7 @@ $border-color: #d9d9d9;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
   min-width: 15em;
-  max-width: 90%;
+  max-width: 100%;
   &-overlay {
     position: fixed;
     top: 0;
@@ -64,6 +74,7 @@ $border-color: #d9d9d9;
     border-top: 1px solid $border-color;
     padding: 12px 16px;
     text-align: right;
+
   }
   &-close {
     position: relative;

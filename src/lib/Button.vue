@@ -1,5 +1,5 @@
 <template>
-    <button class="Sip-button" :class="classes">
+    <button class="Sip-button" :class="classes" :onclick="onClick">
       <span v-if="loading" class="Sip-loadingIndicator"></span>
       <slot></slot>
     </button>
@@ -33,8 +33,9 @@ export default {
       default: false
     }
   },
-  setup(props) {
+  setup(props,context) {
     const {theme, size, round, disable} = props;
+    const {onClick} =context.attrs
     const classes = computed(() => {
       return {
         [`Sip-theme-${theme}`]: theme,
@@ -43,7 +44,7 @@ export default {
         [`Sip-disable-${disable}`]: disable,
       };
     });
-    return {classes};
+    return {classes,onClick};
   }
 };
 </script>

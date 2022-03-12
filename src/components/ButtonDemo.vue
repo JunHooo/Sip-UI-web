@@ -18,7 +18,7 @@
     <Button theme="text-plain">文本按钮</Button>
   </div>
   <div class="Sip-content">
-    <Button theme="button" :round=true>朴素按钮</Button>
+    <Button theme="button" :round=true>圆角按钮</Button>
     <Button theme="primary" :round=true>主要按钮</Button>
     <Button theme="success" :round=true>成功按钮</Button>
     <Button theme="danger" :round=true>危险按钮</Button>
@@ -72,16 +72,7 @@ import Button from '../lib/Button.vue';
 export default {
   name: 'ButtonDemo',
   components: {Button},
-  setup() {
-    const onclick = () => {
-      console.log('hi');
-    };
-    const onmouseover = () => {
-      console.log('hi2');
-    };
-    return {onclick, onmouseover};
-  }
-};
+}
 </script>
 
 <style lang="scss" >
