@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="Sip-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="Sip-dialog-wrapper">
-      <div class="Sip-dialog">
-        <header>
-          <slot name="title" />
-          <span @click="close" class="Sip-dialog-close"></span>
-        </header>
-        <main>
-          <slot name="content" />
-        </main>
-        <footer>
-          <Button @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="Sip-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="Sip-dialog-wrapper">
+        <div class="Sip-dialog">
+          <header>
+            <slot name="title"/>
+            <span @click="close" class="Sip-dialog-close"></span>
+          </header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
@@ -43,32 +45,32 @@ export default {
       Button,
     },
   },
-    setup(props, context) {
-      const close = () => {
-        context.emit('update:visible', false);
-      };
-      const onClickOverlay = () => {
-        if (props.closeOnClickOverlay) {
-          close();
-        }
-      };
-      const ok = () => {
-        if (props.ok?.() !== false) {
-          close();
-        }
-      };
-      const cancel = () => {
-        context.emit('cancel');
+  setup(props, context) {
+    const close = () => {
+      context.emit('update:visible', false);
+    };
+    const onClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
         close();
-      };
-      return {
-        close,
-        onClickOverlay,
-        ok,
-        cancel
-      };
-    }
-}
+      }
+    };
+    const ok = () => {
+      if (props.ok?.() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      context.emit('cancel');
+      close();
+    };
+    return {
+      close,
+      onClickOverlay,
+      ok,
+      cancel
+    };
+  }
+};
 </script>
 <style lang="scss">
 $radius: 4px;
