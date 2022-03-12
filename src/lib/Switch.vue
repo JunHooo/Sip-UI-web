@@ -1,5 +1,5 @@
 <template>
-  <div class="Sip-button" @click="move" :class="{'Sip-check':value}" >
+  <div class="Sip-switch-button" @click="move" :class="{'Sip-check':value}" >
     <div class="Sip-circle"></div>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .Sip-button{
+  .Sip-switch-button{
     height: 20px;
     width: 40px;
     border-radius: 20px;
@@ -34,8 +34,8 @@ export default {
       height: 16px;
       width: 16px;
       border-radius: 50%;
-      top:1px;
-      left: 2px;
+      top:2px;
+      left:2px;
       position: absolute;
       transition: left 300ms;
     }
@@ -44,7 +44,7 @@ export default {
     background: rgb(19, 206, 102);
 
     > .Sip-circle{
-      left: 21px;
+      left: 22px;
     }
   }
 
