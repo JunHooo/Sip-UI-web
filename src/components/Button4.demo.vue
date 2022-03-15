@@ -14,11 +14,5 @@ export default {
   components: {
     Button,
   },
-  setup() {
-    const bool = ref(false)
-    return {
-      bool
-    }
-  }
 }
 </script>

@@ -1,6 +1,5 @@
 <template>
   <div class="topAndBanner">
-    <Nav/>
     <div class="banner">
       <h1>Sip-UI</h1>
       <h2>为极简而生</h2>

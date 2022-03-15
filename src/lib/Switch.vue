@@ -33,6 +33,7 @@ export default {
     border-radius: 20px;
     background: rgb(255, 73, 73);
     position: relative;
+    z-index: 1;
     > .Sip-circle{
       background: rgb(255, 255, 255);
       height: 16px;

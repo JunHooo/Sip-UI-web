@@ -8,13 +8,14 @@
       </router-link>
     </div>
     <ul class="menu">
-      <router-link to="/Doc">文档</router-link>
+      <router-link to="/Doc/intro">文档</router-link>
     </ul>
     <span class="toggleAside" @click="toggleMenu" v-if="toggleMenuButtonVisible">
       <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-item"></use>
         </svg>
     </span>
+    <div class="line"></div>
   </div>
 </template>
 <script lang="ts">
@@ -39,18 +40,22 @@ export default {
 <style lang="scss" scoped>
 .topnav {
   display: flex;
-  padding: 16px;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
+  width: 80%;
+  left: 10%;
+  margin: auto;
+  height: 75px;
+  background:white;
+  z-index: 20;
   justify-content: center;
   align-items: center;
+  border-bottom:1px solid rgb(220, 223, 230);
 
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    z-index: 10;
 
     svg {
       height: 32px;
@@ -63,7 +68,7 @@ export default {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
-    color:rgb(173, 216, 230);
+    color:rgb(99, 187, 253);
 
     > li {
       margin: 0 1em;

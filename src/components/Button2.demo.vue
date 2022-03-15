@@ -3,7 +3,7 @@
 </demo>
 <template>
   <div>
-    <Button>默认按钮</Button>
+    <Button :disable="true">默认按钮</Button>
     <Button theme="primary" :disable=true>主要按钮</Button>
     <Button theme="success" :disable=true>成功按钮</Button>
     <Button theme="danger" :disable=true>危险按钮</Button>
@@ -23,11 +23,5 @@ export default {
   components: {
     Button,
   },
-  setup() {
-    const bool = ref(false)
-    return {
-      bool
-    }
-  }
 }
 </script>

@@ -1,4 +1,5 @@
 <template>
+  <div class="scroll">
   <div class="layout">
     <Nav class="nav" toggleMenuButtonVisible/>
     <div class="content">
@@ -32,9 +33,10 @@
         </ol>
       </aside>
       <main>
-        <router-view />
+        <router-view/>
       </main>
     </div>
+  </div>
   </div>
 </template>
 <script lang="ts">
@@ -45,7 +47,8 @@ import {inject, Ref} from 'vue';
 export default {
   components: {Nav},
   setup() {
-    const menuVisible = inject < Ref < boolean >> ("menuVisible"); // get
+
+    const menuVisible = inject<Ref<boolean>>('menuVisible'); // get
     return {
       menuVisible
     };
@@ -53,14 +56,22 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.scroll{
+  overflow:hidden;
 
+}
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  z-index: 10;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
   > .nav {
     flex-shrink: 0;
   }
+
   > .content {
     flex-grow: 1;
     padding-top: 60px;
@@ -70,44 +81,57 @@ export default {
     }
   }
 }
+
 .content {
   display: flex;
+
   > aside {
     flex-shrink: 0;
+    margin-left: 10%;
+    padding: 9% 0;
+    height: 100%;
   }
+
   > main {
-    flex-grow: 1;
-    padding: 16px;
+    width: 80%;
+    margin-left: 14%;
+    padding: 50px 50px;
   }
 }
+
 aside {
   background: lightblue;
-  width: 150px;
+  width: 200px;
   padding: 16px 0;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 70px;
-  height: 100%;
+  z-index: 10;
 
   > h2 {
     margin-bottom: 4px;
-    padding: 0 16px;
+    padding: 10px 16px;
   }
 
   > ol {
     > li {
       > a {
         display: block;
-        padding: 4px 16px;
+        padding: 10px 16px;
         text-decoration: none;
       }
+      > a:hover{
+        color:rgb(64, 158, 255)
+      }
+
       .router-link-active {
         background: white;
       }
     }
   }
 }
+
 main {
   overflow: auto;
 }
