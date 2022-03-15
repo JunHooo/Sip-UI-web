@@ -115,14 +115,17 @@ $radius: 4px;
 
   &.Sip-theme-text {
     border-color: transparent;
-    box-shadow: none;
-    color: inherit;
+    color:$blue ;
 
     &:hover,
     &:focus {
-      background: darken(white, 5%);
+      background: white;
     }
-  }
+    &.Sip-disable-true {
+      color:rgb(192, 196, 204);
+      background: white
+      }
+    }
 
   &.Sip-theme-primary {
     border-color: transparent;
@@ -290,7 +293,7 @@ $radius: 4px;
   &.Sip-size-small {
     font-size: 12px;
     height: 20px;
-    padding: 0 4px;
+    padding: 0 8px;
   }
 
   &.Sip-round-true {

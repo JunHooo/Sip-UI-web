@@ -1,15 +1,19 @@
 <template>
-  <div class="Sip-switch-button" @click="move" :class="{'Sip-check':value}" >
+  <div class="Sip-switch-button" @click="move" :class="{'Sip-check':value}" :disabled="disabled">
     <div class="Sip-circle"></div>
   </div>
 </template>
 
 <script lang="ts">
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 
 export default {
   props:{
-    value:Boolean
+    value:Boolean,
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   name: 'Switch',
   setup(props,context){
