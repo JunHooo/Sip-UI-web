@@ -1,28 +1,43 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <router-link to="/">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-sip"></use>
+        </svg>
+      </router-link>
+    </div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <router-link to="/Doc">文档</router-link>
     </ul>
-    <span class="toggleAside"  @click="toggleMenu"></span>
+    <span class="toggleAside" @click="toggleMenu" v-if="toggleMenuButtonVisible">
+      <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-item"></use>
+        </svg>
+    </span>
   </div>
 </template>
 <script lang="ts">
-import { inject, Ref } from 'vue'
+import {inject, Ref} from 'vue';
+
 export default {
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
   setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
+    const menuVisible = inject<Ref<boolean>>('menuVisible'); // get
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
     };
-    return { toggleMenu };
+    return {toggleMenu};
   },
 };
 </script>
 <style lang="scss" scoped>
 .topnav {
-  background: pink;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -32,22 +47,33 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
+
   > .logo {
     max-width: 6em;
     margin-right: auto;
+
+    svg {
+      height: 32px;
+      width: 32px;
+    }
   }
+
+
   > .menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
+    color:rgb(173, 216, 230);
+
     > li {
       margin: 0 1em;
     }
   }
+
   > .toggleAside {
     width: 24px;
     height: 24px;
-    background: red;
+    color: rgb(176, 240, 229);
     position: absolute;
     left: 16px;
     top: 50%;
@@ -55,7 +81,8 @@ export default {
     display: none;
 
   }
-  @media (max-width:500px) {
+
+  @media (max-width: 500px) {
     > .menu {
       display: none;
     }
