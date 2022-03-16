@@ -15,7 +15,7 @@
       <th align="left">说明</th>
       <th align="left">类型</th>
       <th align="left">可选值</th>
-      <th align="left">默认值<tr>
+      <th align="left">默认值</th>
     </tr>
     </thead>
     <tbody>

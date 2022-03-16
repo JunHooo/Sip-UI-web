@@ -9,7 +9,7 @@
       <th align="left">说明</th>
       <th align="left">类型</th>
       <th align="left">可选值</th>
-      <th align="left">默认值<tr>
+      <th align="left">默认值</th>
     </tr>
     </thead>
     <tbody>
@@ -59,7 +59,7 @@ table{
   th{
     font-weight: 400;
     color: rgb(144, 147, 153);
-    padding-right: 100px;
+    padding-right: 120px;
     padding-bottom: 20px;
   }
   td {
