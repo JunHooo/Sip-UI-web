@@ -4,6 +4,10 @@
     <Demo :component="Switch1Demo" />
     <Demo :component="Switch2Demo" />
   </div>
+  <p>下一节 ： <router-link to="/doc/dialog">Dialog组件</router-link></p>
+  <p>上一节 ： <router-link to="/doc/button">Button组件</router-link></p>
+
+
 </template>
 
 <script lang="ts">
@@ -59,6 +63,12 @@ $border-color: #d9d9d9;
       font-family: Consolas, 'Courier New', Courier, monospace;
       margin: 0;
     }
+  }
+}
+p{
+  margin-bottom: 16px;
+  a{
+    color:rgb(9, 129, 229)
   }
 }
 </style>

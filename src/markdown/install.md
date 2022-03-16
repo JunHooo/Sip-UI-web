@@ -13,3 +13,5 @@ yarn add Sip-ui
 ```
 
 下一节：[开始使用](#/doc/get-started)
+
+上一节：[介绍](#/doc/intro)

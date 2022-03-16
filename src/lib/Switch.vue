@@ -1,5 +1,5 @@
 <template>
-  <div class="Sip-switch-button" @click="move" :class="{'Sip-check':value}" :disabled="disabled">
+  <div class="Sip-switch-button" @click="move" :class="{'Sip-check':value}" >
     <div class="Sip-circle"></div>
   </div>
 </template>
@@ -10,10 +10,6 @@ import {computed, ref} from 'vue';
 export default {
   props:{
     value:Boolean,
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
   },
   name: 'Switch',
   setup(props,context){

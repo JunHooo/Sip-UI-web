@@ -26,3 +26,4 @@ export default {
 }
 </script>
 ```
+上一节：[安装](#/doc/install)

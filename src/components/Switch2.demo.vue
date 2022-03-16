@@ -2,34 +2,35 @@
 文字描述
 </demo>
 <template>
-  <div class="dd">
-    <span>按年付费</span>
+  <div class="xxx">
+    <Span :value="bool">按年付费</Span>
     <Switch v-model:value="bool"/>
-    <span>按月付费</span>
+    <Span :value="!bool">按月付费</Span>
   </div>
 </template>
 
 <script lang="ts">
 import Switch from '../lib/Switch.vue';
-import {
-  ref
-} from 'vue';
+import Span from '../lib/Span.vue';
+import {ref} from 'vue';
 
 export default {
   components: {
     Switch,
+    Span
   },
   setup() {
     const bool = ref(false);
     return {
-      bool
+      bool,
     };
   }
 };
 </script>
 <style lang="scss" scoped>
-  .dd{
+  .xxx{
     display:flex;
     flex-direction: row;
   }
+
 </style>

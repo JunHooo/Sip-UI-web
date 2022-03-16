@@ -9,7 +9,6 @@
 
 <script lang="ts">
 import Button from '../lib/Button.vue'
-import {ref} from 'vue'
 export default {
   components: {
     Button,
