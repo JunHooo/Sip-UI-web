@@ -111,7 +111,7 @@ aside {
 
   > h2 {
     margin-bottom: 4px;
-    padding: 10px 16px;
+    padding: 10px 4px;
   }
 
   > ol {

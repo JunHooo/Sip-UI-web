@@ -59,6 +59,41 @@
     <Demo :component="Dialog1Demo" />
     <Demo :component="Dialog2Demo" />
   </div>
+  <h1>属性</h1>
+  <table>
+    <thead>
+    <tr>
+      <th align="left">参数</th>
+      <th align="left">说明</th>
+      <th align="left">类型</th>
+      <th align="left">可选值</th>
+      <th align="left">默认值<tr>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>title</td>
+      <td>标题</td>
+      <td>string</td>
+      <td>——</td>
+      <td>——</td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td>内容</td>
+      <td>string</td>
+      <td>——</td>
+      <td>——</td>
+    </tr>
+    <tr>
+      <td>closeOnClickOverlay</td>
+      <td>点击遮罩关闭</td>
+      <td>boolean</td>
+      <td>——</td>
+      <td>false</td>
+    </tr>
+    </tbody>
+  </table>
   <p>下一节 ： <router-link to="/doc/tabs">Tabs组件</router-link></p>
   <p>上一节 ： <router-link to="/doc/button">Button组件</router-link></p>
 </template>
@@ -116,9 +151,29 @@ $border-color: #d9d9d9;
   }
 }
 p{
-  margin-bottom: 16px;
+  margin-top: 16px;
   a{
     color:rgb(9, 129, 229)
+  }
+}
+h1{
+  padding:20px 0;
+}
+table{
+  border-collapse: collapse;
+  font-size: 14px;
+  tr{
+    border-bottom: 1px solid #dcdfe6;
+  }
+  th{
+    font-weight: 400;
+    color: rgb(144, 147, 153);
+    padding-right: 100px;
+    padding-bottom: 20px;
+  }
+  td {
+    padding: 30px 90px 30px 0;
+    color: #606266
   }
 }
 </style>

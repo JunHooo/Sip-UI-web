@@ -1,5 +1,5 @@
 <template>
-    <button class="Sip-button" :class="classes" :onclick="onClick" :disabled="disabled">
+    <button class="Sip-button" :class="classes" :onclick="onClick" >
       <span v-if="loading" class="Sip-loadingIndicator"></span>
       <slot></slot>
     </button>

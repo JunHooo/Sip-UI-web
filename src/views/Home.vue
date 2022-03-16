@@ -8,12 +8,13 @@
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-git"></use>
           </svg>
-          GitHub</a>
+          <span>Github</span>
+        </a>
         <router-link to="/Doc/Intro">
           <svg class="icon" aria-hidden="true" style="margin-right:8px">
             <use xlink:href="#icon-action"></use>
           </svg>
-          开始
+          <span>开始</span>
         </router-link>
       </p>
     </div>
@@ -94,58 +95,71 @@ export default {
 .document {
   display: flex;
   width: 100%;
-  padding:40px 120px;
+  padding: 40px 120px;
   justify-content: space-between;
-  svg{
-    height:60px;
+
+  svg {
+    height: 60px;
     width: 60px;
   }
-  > .vue{
+
+  > .vue {
     display: flex;
     flex-direction: row;
   }
-  > .ts{
+
+  > .ts {
     display: flex;
     flex-direction: row;
   }
-  > .light{
+
+  > .light {
     display: flex;
     flex-direction: row;
   }
-  .text{
+
+  .text {
 
 
   }
 }
-@media (max-width:1200px ) {
-  .document{
+
+@media (max-width: 1200px) {
+  .document {
     flex-wrap: wrap;
-    > .vue{
+
+    > .vue {
       padding: 10px 0;
     }
-    > .ts{
+
+    > .ts {
       padding: 10px 0;
     }
-    > .light{
+
+    > .light {
       padding: 10px 0;
     }
   }
 }
-@media (max-width:600px ) {
-  .document{
+
+@media (max-width: 600px) {
+  .document {
     flex-wrap: wrap;
-    padding:50px 20px;
+    padding: 50px 20px;
     justify-content: center;
-    > .vue{
+
+    > .vue {
       padding: 8px 0;
       width: 250px;
     }
-    > .ts{
+
+    > .ts {
       padding: 8px 0;
       width: 250px;
 
     }
-    > .light{
+
+    > .light {
       padding: 8px 0;
       width: 250px;
     }
